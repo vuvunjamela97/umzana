@@ -7,11 +7,13 @@ import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    data:{header:false}
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data:{header:false}
   },
   {
     path: 'about',
