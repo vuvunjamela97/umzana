@@ -1,0 +1,53 @@
+.imgs {
+    background-image:url(../../assets/logo/logo4.png), url(../../assets/homepage/hero.png);
+    background-size: contain, cover;
+    background-position: center, center; 
+    background-repeat: no-repeat;
+    
+  } 
+
+
+  .x1 {
+    padding: 50px 0;
+    text-align: right;
+  } 
+
+  .x2 {
+    padding: 70px 0;
+    text-align: right;
+  } 
+
+  .apply {
+    background-image: url(../../assets/homepage/apply3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 140px;
+    width: 50%;
+    
+  } 
+
+  @media only screen and (max-width: 768px) {
+    .x1 {
+      text-align: center;
+      margin: bottom 0;
+    }
+   
+    .apply {
+      margin-top: -10px;
+      background-position: center; 
+  } 
+
+  .tile.is-gapless {
+    .tile.is-parent {
+      padding: 0;
+    }
+    
+    .tile.is-vertical>.tile.is-child {
+      margin-bottom: 0 !important;
+    }
+    
+    .notification {
+      border-radius: 0;
+    }
+  }
+}
