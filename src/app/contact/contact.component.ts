@@ -43,7 +43,8 @@ export class ContactComponent implements OnInit {
       name: ['', Validators.required ],
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       cell: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      message: ['', Validators.required ]
+      message: ['', Validators.required ],
+      attended: ['']
     });
   }
 
@@ -52,7 +53,8 @@ export class ContactComponent implements OnInit {
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
       cell: new FormControl('', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-      message: new FormControl('', Validators.required)
+      message: new FormControl('', Validators.required),
+      attended: new FormControl('')
     });
   }
 
