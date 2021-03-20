@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  exampleForm: FormGroup; 
+  exampleForm: FormGroup;
+  viewed: any; 
 
   constructor(
     public db: DbService, 
@@ -43,8 +44,7 @@ export class ContactComponent implements OnInit {
       name: ['', Validators.required ],
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       cell: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      message: ['', Validators.required ],
-      attended: ['']
+      message: ['', Validators.required ]
     });
   }
 
@@ -53,13 +53,13 @@ export class ContactComponent implements OnInit {
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
       cell: new FormControl('', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-      message: new FormControl('', Validators.required),
-      attended: new FormControl('')
+      message: new FormControl('', Validators.required)
     });
   }
 
    
 onSubmit(value:any) {
+  value.viewed = false;
   this.db.createQuery(value)
     .then(
       res => {

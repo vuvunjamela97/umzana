@@ -13,7 +13,8 @@ export class DbService {
       name: value.name,
       email: value.email,
       cell: value.cell,
-      message: value.message
+      message: value.message,
+      viewed: value.viewed
     });
   }
 }
